@@ -1,13 +1,13 @@
 export interface ChallengeData {
   id: string;
-  calendar: Calendar[];
+  calendar: CalendarType[];
   created: string;
   customer: Customer;
   deleted: boolean;
   status: string;
 }
 
-export interface Calendar {
+export interface CalendarType {
   actions: Action[];
   month: number;
   year: number;
@@ -47,4 +47,13 @@ export interface Customer {
   state: string;
   street: string;
   zip: string;
+}
+
+export interface IScheduledCard {
+  bgColor: string;
+  client: string;
+  status: 'Scheduled' | 'Completed' | 'Unscheduled'; 
+  vendor: Vendor;
+  scheduledDate?: string;
+  title: string;
 }
